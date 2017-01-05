@@ -788,6 +788,9 @@ def setup(parser, **kwargs):
         opts.add_argument('--unpack-pkgs', action='store_false',
                           default=False, dest='install_pkgs',
                           help=argparse.SUPPRESS)
+        opts.add_argument('--expose-port', '-p', action='append', default=[],
+                          help="Expose a network port, "
+                               "host[:experiment[/proto]]. Example: 8000:80")
 
     # --docker-option
     def add_raw_docker_option(opts):
